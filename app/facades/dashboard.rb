@@ -20,8 +20,7 @@ class Dashboard
     @tenants_with_request ||= Tenant.joins('left outer join request_trackers on
                                            request_trackers.tenant_id = tenants.id')
                               .select('id', 'tenants.name',
-                                      'sum(request_trackers.request_count) as requests_count',
-                                      'tenants.api_key')
+                                      'sum(request_trackers.request_count) as requests_count')
                               .group('tenants.id')
   end
 

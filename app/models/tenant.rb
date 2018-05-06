@@ -3,7 +3,7 @@ class Tenant < ApplicationRecord
   has_one :daily_tracker, -> { where(date: Time.zone.today) },
           class_name: 'RequestTracker', inverse_of: :tenant
   validates :name, presence: true
-  validates :api_key, presence: true, uniqueness: true
+  validates :api_key, uniqueness: true
 
   before_create :generate_api_key
 

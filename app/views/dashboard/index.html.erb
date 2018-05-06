@@ -42,7 +42,6 @@
             <tr>
               <th>Sl No.</th>
               <th>Tenant Name</th>
-              <th>Api Key</th>
               <th>#Requests</th>
             </tr>
           </thead>
@@ -51,7 +50,6 @@
               <tr>
                 <td><%= i+1 %></td>
                 <td><%= tenant.name %></td>
-                <td><%= tenant.api_key %></td>
                 <td><%= tenant.requests_count.to_i%></td>
               </tr>
             </tbody>

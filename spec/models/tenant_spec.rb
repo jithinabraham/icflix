@@ -9,7 +9,6 @@ RSpec.describe Tenant, type: :model do
 
   describe 'Validations' do
     it { expect(tenant).to validate_presence_of(:name) }
-    it { expect(tenant).to validate_presence_of(:api_key) }
     it { expect(tenant).to validate_uniqueness_of(:api_key) }
   end
 
