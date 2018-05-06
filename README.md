@@ -1,24 +1,81 @@
-# README
+# icflix 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version - `2.5.1`
 
-Things you may want to cover:
+* Rails version - `5.2.0`
 
-* Ruby version
+* Install all dependencies - `bundle install`
 
-* System dependencies
+* Database - `pg`
 
-* Configuration
+* Database creation - `rails db:create`
 
-* Database creation
+* Database initialization - `rails db:migrate`
 
-* Database initialization
+* To load dummy data - `rails db:seed`
 
-* How to run the test suite
+* How to run the test suite - `rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Api Structure
 
-* Deployment instructions
+* Header  - `{Authorization: Token tenant_token}`
 
-* ...
+* Sample api_key - `pnf-Og17ylratySpeukB0w` `wVZsX5wxZ9o-4OB6MRklXQ`
+
+```
+  get /questions
+
+    [
+    {
+        "id": id,
+        "description": "Question",
+        "public_answers": [
+            {
+                "id": id,
+                "description": "Answer 1",
+                "is_personal": false,
+                "provider": {
+                    "id": 1,
+                    "name": "Name"
+                }
+            },
+            ...
+        ],
+        "asker": {
+            "id": 1,
+            "name": "Name"
+        }
+    },
+    ...
+    }]
+```
+
+
+```
+  get/search?query=query_string
+
+  [
+    {
+        "id": id,
+        "description": "Question",
+        "public_answers": [
+            {
+                "id": id,
+                "description": "Answer 1",
+                "is_personal": false,
+                "provider": {
+                    "id": 1,
+                    "name": "Name"
+                }
+            },
+            ...
+        ],
+        "asker": {
+            "id": 1,
+            "name": "Name"
+        }
+    },
+    ...
+    }]
+```
+
