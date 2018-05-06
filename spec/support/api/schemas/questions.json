@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type" : "array",
+  "properties":{
+    "$ref": "file:spec/support/api/schemas/question.json#",
+     "type" : "array",   
+      "public_answers" : {
+        "$ref": "file: spec/support/api/schemas/answer.json#"
+      }
+  }
+}

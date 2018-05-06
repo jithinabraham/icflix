@@ -7,7 +7,7 @@ gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
-gem 'faker'
+gem 'ffaker'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rack-attack'
@@ -22,6 +22,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'rubocop', require: false
 end
@@ -34,9 +35,14 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'chromedriver-helper'
-  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'json_matchers'
+  gem 'rails-controller-testing'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov'
+  gem 'therubyracer'
+  gem 'timecop'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

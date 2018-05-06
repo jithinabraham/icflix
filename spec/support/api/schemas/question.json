@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "description": "Question description",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "asker":{
+        "$ref": "file: spec/support/api/schemas/user.json#"
+      }
+    },
+    "required" : ["id", "description"]  
+}
