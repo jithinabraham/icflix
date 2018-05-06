@@ -1,1 +1,1 @@
-Rails.application.config.middleware.use ApiIntervalLimitter
+Rails.application.config.middleware.use ApiIntervalLimitter unless Rails.env.test?

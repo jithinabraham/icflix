@@ -1,4 +1,5 @@
 class Api::V1::ApplicationController < ::ApplicationController
+  include ExceptionHandler
   attr_reader :current_tenant
   protect_from_forgery with: :null_session
 
@@ -15,5 +16,14 @@ class Api::V1::ApplicationController < ::ApplicationController
       @current_tenant = command.result
       @current_tenant.request_track!
     end
+  end
+
+  def send_error_response(entity = nil, message = 'invalid data provided', status = 400)
+    render json: {
+      error: {
+        errors: entity&.errors,
+        message: message
+      }
+    }, status: status
   end
 end
