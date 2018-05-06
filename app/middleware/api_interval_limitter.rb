@@ -1,4 +1,3 @@
-require 'rack/throttle'
 class ApiIntervalLimitter < Rack::Throttle::Interval
   LIMIT = 100
   attr_reader :api_request
