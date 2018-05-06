@@ -3,4 +3,6 @@ class Question < ApplicationRecord
   has_many :answers
   has_many :public_answers, -> { where(is_personal: false) },
            class_name: 'Answer', inverse_of: :question
+
+  validates :description, presence: true
 end

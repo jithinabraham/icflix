@@ -17,7 +17,9 @@ RSpec.describe Api::V1::QuestionsController, type: :request do
 
       it 'returns only public answers' do
         res = json[(0..json.length).to_a.sample]
-        expect(res.dig('public_answers').first&.dig('is_personal')).to be_falsey
+        if res.dig('public_answers').first
+          expect(res.dig('public_answers').first&.dig('is_personal')).to be_falsey
+        end
       end
     end
     context 'with invalid token' do
