@@ -23,7 +23,7 @@
 * Sample api_key - `pnf-Og17ylratySpeukB0w` `wVZsX5wxZ9o-4OB6MRklXQ`
 
 ```
-  get /questions
+  get /api/v1/questions
 
     [
     {
@@ -52,7 +52,7 @@
 
 
 ```
-  get/search?query=query_string
+  get /api/v1/questions/search?query=query_string
 
   [
     {
