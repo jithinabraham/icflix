@@ -1,0 +1,46 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'config/**/*.rb'
+    - 'db/**/*.rb'
+    - '**/Rakefile'
+    - '**/config.ru'
+    - '**/spec_helper.rb'
+    - '**/rails_helper.rb'
+    - 'lib/tasks/db_extensions.rake'
+    - 'bin/*'
+
+# Always run rails cops
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/IndentHash:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+# We don't want to add `dependent: destory` for all associations
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

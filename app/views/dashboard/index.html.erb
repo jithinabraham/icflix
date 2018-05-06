@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Users</h5>
+        <p class="card-text"> <%= @dashboard.users_count %> </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Questions</h5>
+        <p class="card-text"> <%= @dashboard.questions_count %> </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Answers</h5>
+        <p class="card-text"> <%= @dashboard.answers_count  %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Tenants</h5>
+        <p class="card-text"> <%= @dashboard.tenants_count %> </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class ='row' style="margin-top: 30px;"">
+  <% if @dashboard.tenants_with_request.present? %>
+    <div class="col-sm-5">
+      <h5>Tenant Requests</h2>
+      <p></p>  
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Sl No.</th>
+              <th>Tenant Name</th>
+              <th>#Requests</th>
+            </tr>
+          </thead>
+          <% @dashboard.tenants_with_request.each_with_index do  |tenant, i|%>
+            <tbody>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= tenant.name %></td>
+                <td><%= tenant.requests_count.to_i%></td>
+              </tr>
+            </tbody>
+          <%end%>
+        </table>
+    </div>
+  <% end %>
+</div>
